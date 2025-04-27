@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Farah Hedhili Ep Garram - Cabinet Médical</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Dr Farah Hedhili Ep Garram" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#acces">Accès</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reservations">Réservations</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>DR FARAH HEDHILI EP GARRAM</h1>
+            <p>Site dédié aux pathologies ORL et à la chirurgie de la face et du cou</p>
+            <a href="#reservations" class="cta-button">Rendez-vous</a>
+        </div>
+    </section>
+
+    <section class="pathologies">
+        <div class="pathologies-grid">
+            <div class="pathology-card">
+                <h3>Nez et Sinus</h3>
+                <ul>
+                    <li>Nez et fosses nasales</li>
+                    <li>Déviation septale</li>
+                    <li>La rhinite vasomotrice</li>
+                    <li>Le kyste de Tornwaldt</li>
+                </ul>
+            </div>
+            <div class="pathology-card">
+                <h3>Oreilles</h3>
+                <ul>
+                    <li>Bouchon de cérumen</li>
+                    <li>Otite externe</li>
+                    <li>Otite moyenne aigue</li>
+                    <li>Acouphènes</li>
+                    <li>Surdité Brusque</li>
+                </ul>
+            </div>
+            <div class="pathology-card">
+                <h3>Larynx</h3>
+                <ul>
+                    <li>Cancer du larynx</li>
+                    <li>Paralysie de la corde vocale</li>
+                    <li>Polype de la corde vocale</li>
+                    <li>Laryngectomie</li>
+                </ul>
+            </div>
+            <div class="pathology-card">
+                <h3>Face et cou</h3>
+                <ul>
+                    <li>Glande parotide</li>
+                    <li>Kystes du tractus thyréoglosse</li>
+                    <li>Kyste du 2ème arc branchial</li>
+                    <li>Thyroïdectomie</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>À propos de ce site</h2>
+        <p>Ce site est créé par le Docteur Farah Hedhili Ep Garram, ORL, chirurgien de la face et du cou, pour l'information du public sur les pathologies ORL et sur la chirurgie cervico-faciale.</p>
+        <p>On aborde les différentes régions anatomiques de la région ORL, leurs pathologies et leurs traitements chirurgicaux.</p>
+        <p>Chaque région anatomique est abordée séparément et en détail après un bref rappel simple et tangible pour le grand public.</p>
+    </section>
+
+    <section id="acces" class="cabinet">
+        <h2>Cabinet ORL</h2>
+        <div class="cabinet-info">
+            <p>2 le carrefour médical, Cabinet A 1-7 en face de l'Hôpital Mongi Slim<br>La Marsa Ain Zaghouan nord</p>
+            <div class="cabinet-images">
+                <img src="images/cabinet-exterieur.jpg" alt="Vue extérieure">
+                <img src="images/cabinet-entree.jpg" alt="Entrée">
+                <img src="images/cabinet-salle-attente.jpg" alt="Salle d'attente">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Nous contacter</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <p>99 724 727</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <p>contact@orl-chirurgie.fr</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservations" class="reservations">
+        <h2>Prendre rendez-vous</h2>
+        <div class="appointment-container">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prev-month" class="calendar-nav">&lt;</button>
+                    <h3 id="month-year"></h3>
+                    <button id="next-month" class="calendar-nav">&gt;</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div>Dim</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mer</div>
+                    <div>Jeu</div>
+                    <div>Ven</div>
+                    <div>Sam</div>
+                </div>
+                <div id="calendar-days" class="calendar-days"></div>
+            </div>
+
+            <div id="time-selection" class="time-selection" style="display: none;">
+                <h3>Choisissez un créneau horaire</h3>
+                <div id="time-slots" class="time-slots"></div>
+            </div>
+
+            <form id="appointment-form" class="appointment-form" style="display: none;">
+                <h3>Informations du patient</h3>
+                <div class="form-group">
+                    <label for="patient-name">Nom complet</label>
+                    <input type="text" id="patient-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient-email">Email</label>
+                    <input type="email" id="patient-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="patient-phone">Téléphone</label>
+                    <input type="tel" id="patient-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-reason">Motif de la consultation</label>
+                    <textarea id="appointment-reason" required></textarea>
+                </div>
+                <div class="selected-info">
+                    <p>Date sélectionnée : <span id="selected-date"></span></p>
+                    <p>Heure sélectionnée : <span id="selected-time"></span></p>
+                </div>
+                <button type="submit" class="cta-button">Confirmer le rendez-vous</button>
+            </form>
+
+            <div id="appointment-confirmation" class="appointment-confirmation" style="display: none;">
+                <!-- Le contenu sera généré dynamiquement -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ORL Chirurgie</h3>
+                <p>Ce site est créé par le docteur Farah Hedhili Ep Garram spécialisé en oto-rhino-larungologie, et dédié à l'information du public sur les pathologies ORL et la chirurgie de la face et du cou.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#acces">Accès</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#reservations">Réservations</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Nous contacter</h3>
+                <p>Cabinet: 99 724 727</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Dr Farah Hedhili Ep Garram</p>
+            <p>Créé par Fid's Excellence</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script src="appointment.js"></script>
+</body>
+</html> 
